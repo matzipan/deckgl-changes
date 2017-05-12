@@ -51,8 +51,8 @@ class Root extends Component {
 
   _animate() {
     const timestamp = Date.now();
-    const loopLength = 13;
-    const loopTime = 6000;
+    const loopLength = 14;
+    const loopTime = 30000;
 
     this.setState({
       time: ((timestamp % loopTime) / loopTime) * loopLength

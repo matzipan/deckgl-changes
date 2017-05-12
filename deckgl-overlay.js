@@ -4,21 +4,21 @@ import DeckGL, {PolygonLayer} from 'deck.gl';
 import TripsLayer from './trips-layer';
 
 const LIGHT_SETTINGS = {
-  lightsPosition: [-74.05, 40.7, 8000, -73.5, 41, 5000],
+  lightsPosition: [-8.42627, 43.32463, 3000],
   ambientRatio: 0.05,
   diffuseRatio: 0.6,
   specularRatio: 0.8,
   lightsStrength: [2.0, 0.0, 0.0, 0.0],
-  numberOfLights: 2
+  numberOfLights: 1
 };
 
 export default class DeckGLOverlay extends Component {
 
   static get defaultViewport() {
     return {
-      longitude: -74.20986,
-      latitude: 40.81773,
-      zoom: 13,
+      longitude:  -10.87085,
+      latitude: 46.0049,
+      zoom: 6,
       maxZoom: 16,
       pitch: 45,
       bearing: 0
@@ -52,9 +52,10 @@ export default class DeckGLOverlay extends Component {
         id: 'buildings',
         data: buildings,
         extruded: true,
+        filled: true,
+        opacity: 1,
         wireframe: false,
         fp64: true,
-        opacity: 0.5,
         getPolygon: f => f.polygon,
         getElevation: f => f.height,
         getFillColor: f => [74, 80, 87],
